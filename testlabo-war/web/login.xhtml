@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>FootRace</title>
+        <link href="source/css/bootstrap.min.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <div>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">SUPINFO BARTERING</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand"><span class="glyphicon glyphicon-home"></span> SUPINFO FITNESS</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!--Mon formulaire d'authetification-->
+
+        <div class="form-group" style="margin-top:120px">
+            <h:form style=" margin-left:320px" id="fdial">
+                
+                <div class="ui-grid ui-grid-responsive">
+                   
+                    <fieldset>
+
+                        <legend>Inscription</legend>
+
+                        <div><h:outputLabel for="nom" class="col-sm-2 control-label">Nom<span class="requis">*</span></h:outputLabel></div>
+
+                        <div> <h:inputText id="nom" value="#{inscrirebean.user.nom}" required="true" size="20" maxlength="60"/></div>
+                        <h:message id="nomtext" for="nom" errorClass="erreur" />
+                         <br />
+                         
+                        <div><h:outputLabel for="prenom" class="col-sm-2">Prenom<span class="requis">*</span></h:outputLabel></div>
+                        <div><h:inputText id="prenom" value="#{inscrirebean.user.prenom}" required="true" size="20" maxlength="60"/></div>
+                        <h:message id="prenomtext" for="prenom" errorClass="erreur" />
+                         <br />
+
+                        <div> <h:outputLabel for="email" class="col-sm-2">Adresse email <span class="requis">*</span></h:outputLabel></div>
+
+                        <div> <h:inputText id="email" value="#{inscrirebean.user.email}" required="true" size="20" maxlength="60" /></div>
+
+                        <h:message id="emailMessage" for="email" errorClass="erreur" />
+
+                        <br />
+                         <div> <h:outputLabel for="motdepasse" class="col-sm-2">Mot de passe<span class="requis">*</span></h:outputLabel></div>
+
+                        <div>  <h:inputSecret id="motdepasse" value="#{inscrirebean.user.password}" required="true" size="20" maxlength="20" /></div>
+
+                        <h:message id="motDePasseMessage" for="motdepasse" errorClass="erreur" />
+
+                        <br />
+
+
+
+                        <div> <h:outputLabel for="confirmation" class="col-sm-2">Confirmation du mot de passe <span class="requis">*</span></h:outputLabel></div>
+
+                        <div>  <h:inputSecret id="confirmation" value="#{inscrirebean.user.password}" required="true" size="20" maxlength="20" /></div>
+
+                        <h:message id="confirmationMessage" for="confirmation" errorClass="erreur" />
+
+                        <br />
+
+                        <h:messages globalOnly="true" infoClass="info" />
+                        <div style="margin-left:320px"><h:commandButton value="Inscription" action="#{inscrirebean.inscrire}" styleClass="btn btn-success"/></div>
+
+                        <br />
+
+                    </fieldset>
+
+
+                </div>
+            </h:form> 
+
+
+
+        </div>
+
+    </h:body>
+</html>
+
